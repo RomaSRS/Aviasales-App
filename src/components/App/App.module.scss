@@ -1,0 +1,27 @@
+html, body {
+  background-color: #f3f7fa;
+  font-family: Open Sans, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.root {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 770px;
+}
+
+.sidebar {
+  flex: 1 0 230px;
+  margin: 10px;
+}
+
+.main {
+  flex: 100 0 340px;
+  margin: 10px;
+}
