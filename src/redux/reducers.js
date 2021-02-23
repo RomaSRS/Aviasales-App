@@ -8,7 +8,8 @@ import {
   STOPS_FILTER_CHANGE,
   SORTING_PARAM_CHANGE,
   CHANGE_NUMBER_OF_TICKETS,
-} from '../actions';
+} from './types';
+
 
 const tickets = (state = [], { type, payload: ticketBatch }) => {
   switch (type) {

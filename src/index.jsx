@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import App from './components/App/App';
-import reducers from './reducers';
+import reducers from './redux/reducers';
 
 const initialState = {
   tickets: [],

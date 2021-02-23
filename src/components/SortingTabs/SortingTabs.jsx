@@ -21,6 +21,7 @@ class SortingTabs extends React.PureComponent {
           isLast,
         }) => {
           const active = sortBy === name;
+          
           return (
             <SortingButton
               key={name}
