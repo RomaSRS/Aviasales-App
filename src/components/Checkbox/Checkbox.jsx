@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import KEY_CODES from '../../helpersKeyCode'
 import styles from './Checkbox.module.scss';
 
 class Checkbox extends React.PureComponent {
   handleKeyPress = (event) => {
-    const { ENTER_KEY } = KEY_CODES;
-    if (event.keyCode === ENTER_KEY) {
+    if (event.keyCode === 32) {
       event.preventDefault();
       const { onCheck, checked, value } = this.props;
       onCheck(checked, value);
