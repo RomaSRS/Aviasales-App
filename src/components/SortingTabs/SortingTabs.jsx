@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import SortingButton from './SortingButton';
 import sortingTabsList from './sortingTabsList';
 import styles from './SortingTabs.module.scss';
+import classNames from 'classnames';
 
 class SortingTabs extends React.PureComponent {
   handleClick = (sortingParam) => () => {
@@ -24,12 +25,12 @@ class SortingTabs extends React.PureComponent {
           
           return (
             <SortingButton
-              key={name}
-              name={name}
-              label={label}
-              type="button"
-              handleClick={this.handleClick}
-              className={`${styles.button} ${isFirst ? styles.first : ''} ${isLast ? styles.last : ''} ${active ? styles.active : ''}`}
+              key = {name}
+              name = {name}
+              label = {label}
+              type = "button"
+              handleClick = {this.handleClick}
+              className = {classNames(styles.button, {[styles.first] : isFirst}, {[styles.last] : isLast}, {[styles.active] : active})}
             />
           );
         })}
