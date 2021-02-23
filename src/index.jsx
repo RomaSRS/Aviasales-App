@@ -12,7 +12,7 @@ const initialState = {
     stops: null,
   },
   sortBy: 'price',
-  fetchingState: 'none',
+  fetchingState: 'false',
   numberOfTickets: 5,
   isError: false,
 };
