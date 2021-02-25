@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as actions from '../../redux/actions';
 import { ticketsToRenderSelector } from '../../selectors';
-import Error from '../Error/Error';
 import Header from '../Header/Header';
 import Loading from '../Loading/Loading';
 import NoTickets from '../NoTickets/NoTickets';
@@ -55,9 +54,9 @@ class App extends React.Component {
     } = this.props;
     const isLoading = fetchingState === 'fetching';
     return (
-      <>
+      <div>
         <Header />
-        {isError ? <Error /> : null}
+        {isError && <div className={styles.error}>ОШИБКА</div>}
         <div className={styles.root}>
           <div className={styles.container}>
             <aside className={styles.sidebar}>
@@ -75,7 +74,7 @@ class App extends React.Component {
             </section>
           </div>
         </div>
-      </>
+      </div>
     );
   }
 }

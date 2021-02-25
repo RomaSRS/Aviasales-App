@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import * as types from './types';
 
 
-const tickets = (state = [], { type, payload: ticketBatch }) => {
+const tickets = (state = null, { type, payload: ticketBatch }) => {
   switch (type) {
     case types.TICKETS_GET_SUCCESS:
       return [...state, ...ticketBatch];
@@ -11,7 +11,7 @@ const tickets = (state = [], { type, payload: ticketBatch }) => {
   }
 };
 
-const fetchingState = (state = 'none', { type }) => {
+const fetchingState = (state = null, { type }) => {
   switch (type) {
     case types.TICKETS_GET_REQUEST:
       return 'fetching';
@@ -24,7 +24,7 @@ const fetchingState = (state = 'none', { type }) => {
   }
 };
 
-const filters = (state = {}, { type, payload: newValue }) => {
+const filters = (state = null, { type, payload: newValue }) => {
   switch (type) {
     case types.STOPS_FILTER_CHANGE:
       return { stops: newValue };
@@ -33,7 +33,7 @@ const filters = (state = {}, { type, payload: newValue }) => {
   }
 };
 
-const sortBy = (state = '', { type, payload: sortingParam }) => {
+const sortBy = (state = null, { type, payload: sortingParam }) => {
   switch (type) {
     case types.SORTING_PARAM_CHANGE:
       return sortingParam;
@@ -51,7 +51,7 @@ const numberOfTickets = (state = 5, { type }) => {
   }
 };
 
-const isError = (state = false, { type }) => {
+const isError = (state = null, { type }) => {
   switch (type) {
     case types.TICKETS_GET_FAILURE:
       return true;
