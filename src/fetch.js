@@ -1,3 +1,4 @@
+
 const SEARCH_URL = 'https://front-test.beta.aviasales.ru/search';
 const TICKET_URL = 'https://front-test.beta.aviasales.ru/tickets';
 const numberOfRetries = 10;

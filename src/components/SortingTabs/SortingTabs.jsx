@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// import * as actions from '../../redux/actions';
+
 import SortingButton from './SortingButton';
 import sortingTabsList from './sortingTabsList';
 import styles from './SortingTabs.module.scss';
@@ -9,6 +11,7 @@ class SortingTabs extends React.PureComponent {
   handleClick = (sortingParam) => () => {
     const { handleTabChange } = this.props;
     handleTabChange(sortingParam);
+    console.log('fuck');
   }
 
   render() {
@@ -22,7 +25,7 @@ class SortingTabs extends React.PureComponent {
           isLast,
         }) => {
           const active = sortBy === name;
-          
+
           return (
             <SortingButton
               key = {name}
