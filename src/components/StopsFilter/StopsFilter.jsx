@@ -10,7 +10,6 @@ const allValues = stopsFilterList.reduce((acc, item) => ({ ...acc, [item.value]:
 class StopsFilter extends React.PureComponent {
   handleCheck = (checked, value) => {
     const { filterValue, handleFilterChange } = this.props;
-    console.log(this.props);
     let newValue;
     if (checked) {
       newValue = { ...filterValue, [value]: true };

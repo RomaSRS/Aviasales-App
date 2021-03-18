@@ -1,6 +1,10 @@
-import { combineReducers } from 'redux';
-import * as types from './types';
+import { combineReducers } from "redux";
+import * as types from "./types";
 
+const initialState = {
+  cheaply: true,
+  faster: false,
+};
 
 const tickets = (state = null, { type, payload: ticketBatch }) => {
   switch (type) {
@@ -14,11 +18,11 @@ const tickets = (state = null, { type, payload: ticketBatch }) => {
 const fetchingState = (state = null, { type }) => {
   switch (type) {
     case types.TICKETS_GET_REQUEST:
-      return 'fetching';
+      return "fetching";
     case types.TICKETS_GET_FAILURE:
-      return 'failure';
+      return "failure";
     case types.FETCHING_DONE:
-      return 'done';
+      return "done";
     default:
       return state;
   }
@@ -33,10 +37,14 @@ const filters = (state = null, { type, payload: newValue }) => {
   }
 };
 
-const sortBy = (state = null, { type, payload: sortingParam }) => {
-  switch (type) {
-    case types.SORTING_PARAM_CHANGE:
-      return sortingParam;
+const tabTickets = (state = initialState, action) => {
+  switch (action.type) {
+    case "GET_CHEAPLY_TICKETS":
+      return { ...state, cheaply: true, faster: false };
+
+    case "GET_FASTEST_TICKETS":
+      return { ...state, faster: true, cheaply: false };
+
     default:
       return state;
   }
@@ -66,7 +74,7 @@ export default combineReducers({
   tickets,
   fetchingState,
   filters,
-  sortBy,
+  tabTickets,
   numberOfTickets,
   isError,
 });

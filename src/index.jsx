@@ -11,7 +11,8 @@ const initialState = {
   filters: {
     stops: null,
   },
-  sortBy: 'price',
+  cheaply: true,
+  faster: false,
   fetchingState: 'false',
   numberOfTickets: 5,
   isError: false,

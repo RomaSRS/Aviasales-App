@@ -1,50 +1,54 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-// import * as actions from '../../redux/actions';
+import React, { useRef } from 'react';
+import { useDispatch } from 'react-redux';
+import { getCheaplyTickets, getFastestTickets } from '../../redux/actions';
 
-import SortingButton from './SortingButton';
-import sortingTabsList from './sortingTabsList';
-import styles from './SortingTabs.module.scss';
-import classNames from 'classnames';
+import './SortingTabs.scss';
 
-class SortingTabs extends React.PureComponent {
-  handleClick = (sortingParam) => () => {
-    const { handleTabChange } = this.props;
-    handleTabChange(sortingParam);
-    console.log('fuck');
-  }
+const SortingTabs = () => {
+  const dispatch = useDispatch();
 
-  render() {
-    const { sortBy } = this.props;
-    return (
-      <div className={styles.root}>
-        {sortingTabsList.map(({
-          name,
-          label,
-          isFirst,
-          isLast,
-        }) => {
-          const active = sortBy === name;
+  const cheaply = useRef(null);
+  const faster = useRef(null);
 
-          return (
-            <SortingButton
-              key = {name}
-              name = {name}
-              label = {label}
-              type = "button"
-              handleClick = {this.handleClick}
-              className = {classNames(styles.button, {[styles.first] : isFirst}, {[styles.last] : isLast}, {[styles.active] : active})}
-            />
-          );
-        })}
-      </div>
-    );
-  }
-}
+  const handleClick = (ref) => {
+    if (ref.current.id === 'cheaply') {
+      ref.current.classList.add('tabs__btn--active');
+      faster.current.classList.remove('tabs__btn--active');
+    }
+    if (ref.current.id === 'faster') {
+      ref.current.classList.add('tabs__btn--active');
+      cheaply.current.classList.remove('tabs__btn--active');
+    }
+  };
 
-SortingTabs.propTypes = ({
-  handleTabChange: PropTypes.func,
-  sortBy: PropTypes.string,
-});
+  return (
+    <div className="tabs">
+      <button
+        type="button"
+        className="tabs__btn tabs__btn--active"
+        id="cheaply"
+        ref={cheaply}
+        onClick={() => {
+          dispatch(getCheaplyTickets());
+          handleClick(cheaply);
+        }}
+      >
+        САМЫЙ ДЕШЕВЫЙ
+      </button>
+      <button
+        type="button"
+        className="tabs__btn"
+        id="faster"
+        ref={faster}
+        onClick={() => {
+          dispatch(getFastestTickets());
+          handleClick(faster);
+        }}
+      >
+        САМЫЙ БЫСТРЫЙ
+      </button>
+    </div>
+  );
+};
 
 export default SortingTabs;
