@@ -1,12 +1,16 @@
 import { combineReducers } from "redux";
 import * as types from "./types";
+import filter from "./filter";
 
 const initialState = {
   cheaply: true,
   faster: false,
+  fetchingState: 0,
+  isError: false,
+  ticketsForView: 5,
 };
 
-const tickets = (state = null, { type, payload: ticketBatch }) => {
+const tickets = (state = initialState, { type, payload: ticketBatch }) => {
   switch (type) {
     case types.TICKETS_GET_SUCCESS:
       return [...state, ...ticketBatch];
@@ -15,7 +19,7 @@ const tickets = (state = null, { type, payload: ticketBatch }) => {
   }
 };
 
-const fetchingState = (state = null, { type }) => {
+const fetchingState = (state = initialState, { type }) => {
   switch (type) {
     case types.TICKETS_GET_REQUEST:
       return "fetching";
@@ -28,20 +32,15 @@ const fetchingState = (state = null, { type }) => {
   }
 };
 
-const filters = (state = null, { type, payload: newValue }) => {
-  switch (type) {
-    case types.STOPS_FILTER_CHANGE:
-      return { stops: newValue };
-    default:
-      return state;
-  }
-};
-
 const tabTickets = (state = initialState, action) => {
   switch (action.type) {
     case "GET_CHEAPLY_TICKETS":
       return { ...state, cheaply: true, faster: false };
-
+    case "HANDLE_SHOW_MORE":
+      return {
+        ...state,
+        ticketsForView: state.ticketsForView + 5,
+      };
     case "GET_FASTEST_TICKETS":
       return { ...state, faster: true, cheaply: false };
 
@@ -50,16 +49,7 @@ const tabTickets = (state = initialState, action) => {
   }
 };
 
-const numberOfTickets = (state = 5, { type }) => {
-  switch (type) {
-    case types.CHANGE_NUMBER_OF_TICKETS:
-      return state + 5;
-    default:
-      return state;
-  }
-};
-
-const isError = (state = null, { type }) => {
+const isError = (state = initialState, { type }) => {
   switch (type) {
     case types.TICKETS_GET_FAILURE:
       return true;
@@ -73,8 +63,7 @@ const isError = (state = null, { type }) => {
 export default combineReducers({
   tickets,
   fetchingState,
-  filters,
+  filter,
   tabTickets,
-  numberOfTickets,
   isError,
 });

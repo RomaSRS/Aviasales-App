@@ -4,8 +4,8 @@ const numberOfRetries = 10;
 
 const getSearchId = async () => {
   const res = await fetchRetry(SEARCH_URL, numberOfRetries);
-  const searchIdParam = await res.json();
-  return searchIdParam;
+  const searchId = await res.json();
+  return searchId;
 };
 
 const getTicketBatchRes = async (params) => {

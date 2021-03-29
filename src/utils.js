@@ -44,10 +44,9 @@ const getStartAndFinishTime = (dateString, duration) => {
   return `${hours}:${minutes} ‒ ${endHours}:${endMinutes}`;
 };
 
-const splitNumber = (number) => {
-  const parts = number.toString().split('.');
-  parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
-  return parts.join('.');
+const splitNumber = (price) => {
+  const localeFormat = new Intl.NumberFormat({ maximumSignificantDigits: 3 });
+  return localeFormat.format(price);
 };
 
 const formatDuration = (minutes) => {
@@ -73,6 +72,7 @@ const getPluralForm = (n, forms) => {
 };
 
 export {
+  // checkFilter,
   addIdsMaxStopsAndTotalDuration,
   formatDuration,
   getPluralForm,
