@@ -72,7 +72,6 @@ const getPluralForm = (n, forms) => {
 };
 
 export {
-  // checkFilter,
   addIdsMaxStopsAndTotalDuration,
   formatDuration,
   getPluralForm,
