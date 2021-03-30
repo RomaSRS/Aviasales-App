@@ -6,7 +6,7 @@ import * as types from "./types";
 
 export const getTicketsRequest = () => ({ type: types.TICKETS_GET_REQUEST });
 
-export const getTicketsSuccess = (ticketBatch) => ({ type: types.TICKETS_GET_SUCCESS,   payload: ticketBatch });
+ 
 
 export const getTicketsFailure = () => ({ type: types.TICKETS_GET_FAILURE });
 
