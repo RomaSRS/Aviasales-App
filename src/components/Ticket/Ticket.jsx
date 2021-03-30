@@ -6,7 +6,6 @@ import styles from "./Ticket.module.scss";
 import defaultImage from "./resources/defaultImage.png";
 
 const Ticket = React.memo(({ ticket }) => {
-  // console.log("🚀 ~ file: Ticket.jsx ~ line 9 ~ Ticket ~ ticket", ticket);
   const { price, carrier, segments } = ticket;
   return (
     <div className={styles.root}>

@@ -3,7 +3,7 @@ const TICKET_URL = 'https://front-test.beta.aviasales.ru/tickets';
 const numberOfRetries = 10;
 
 const getSearchId = async () => {
-  const res = await fetchRetry(SEARCH_URL, numberOfRetries);
+  const res = await fetchRetry(SEARCH_URL);
   const searchId = await res.json();
   return searchId;
 };

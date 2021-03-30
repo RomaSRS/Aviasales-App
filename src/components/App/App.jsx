@@ -12,7 +12,6 @@ import Loading from "../Loading/Loading";
 import NoTickets from "../NoTickets/NoTickets";
 import SortingTabs from "../SortingTabs/SortingTabs";
 import CheckboxFilter from "../CheckboxFilter/CheckboxFilter";
-// import TicketList from "../TicketList/TicketList";
 import Ticket from "../Ticket/Ticket";
 import styles from "./App.module.scss";
 
