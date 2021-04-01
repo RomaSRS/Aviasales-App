@@ -18,7 +18,7 @@ const Ticket = React.memo(({ ticket }) => {
                 ? `https://pics.avs.io/99/36/${carrier}.png`
                 : defaultImage
             }
-            alt=""
+            alt="brandAirline"
           />
         </div>
       </div>
