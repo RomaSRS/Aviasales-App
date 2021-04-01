@@ -13,6 +13,7 @@ import NoTickets from "../NoTickets/NoTickets";
 import SortingTabs from "../SortingTabs/SortingTabs";
 import CheckboxFilter from "../CheckboxFilter/CheckboxFilter";
 import Ticket from "../Ticket/Ticket";
+import { isLoadingValue } from "../../constants";
 import styles from "./App.module.scss";
 
 const App = () => {
@@ -58,9 +59,9 @@ const App = () => {
       if (i < ticketsForView) {
         return <Ticket key={key} ticket={ticket} />;
       }
-    }) : null;
+    }) : !arr.length;
 
-  const isLoading = fetchingState === "fetching";
+  const isLoading = fetchingState === isLoadingValue;
 
   const someValue = useMemo(() => !ticketList && !isLoading && !isError, [
     ticketList,

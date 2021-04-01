@@ -12,16 +12,16 @@ export const getTicketsFailure = () => ({ type: types.TICKETS_GET_FAILURE });
 
 export const fetchingDone = () => ({ type: types.FETCHING_DONE });
 
-export const handleShowMore = (e) => ({ type: 'HANDLE_SHOW_MORE', e });
+export const handleShowMore = (e) => ({ type: types.HANDLE_SHOW_MORE, e });
 
-export const dispatchClickOnFilter = (transfer) => ({ type: 'DISPATCH_CLICK_ON_FILTER', transfer });
+export const dispatchClickOnFilter = (transfer) => ({ type: types.DISPATCH_CLICK_ON_FILTER, transfer });
 
-export const getCheaplyTickets = () => ({ type: "GET_CHEAPLY_TICKETS" });
+export const getCheaplyTickets = () => ({ type: types.GET_CHEAPLY_TICKETS });
 
-export const getFastestTickets = () => ({ type: "GET_FASTEST_TICKETS" });
+export const getFastestTickets = () => ({ type: types.GET_FASTEST_TICKETS });
 
 
-export const getTicket = (tickets, stop) => ({ type: 'GET_TICKET', tickets, stop });
+export const getTicket = (tickets, stop) => ({ type: types.GET_TICKET, tickets, stop });
 
 export function getId() {
   return (dispatch) => {

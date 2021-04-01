@@ -37,7 +37,7 @@ const Filter = () => {
                   fill="#2196F3"
                   d="M8.28571 14L4 10.1612L5.20857 9.0787L8.28571 11.8273L14.7914 6L16 7.09021L8.28571 14Z"
                 />
-              ) : null}
+              ) : !stateFilter.all}
             </g>
           </svg>
           <span className={styles.title}>Все</span>
@@ -67,7 +67,7 @@ const Filter = () => {
                   fill="#2196F3"
                   d="M8.28571 14L4 10.1612L5.20857 9.0787L8.28571 11.8273L14.7914 6L16 7.09021L8.28571 14Z"
                 />
-              ) : null}
+              ) : !stateFilter.without}
             </g>
           </svg>
           <span className={styles.title}>Без пересадок</span>
@@ -96,7 +96,7 @@ const Filter = () => {
                   fill="#2196F3"
                   d="M8.28571 14L4 10.1612L5.20857 9.0787L8.28571 11.8273L14.7914 6L16 7.09021L8.28571 14Z"
                 />
-              ) : null}
+              ) : !stateFilter.one}
             </g>
           </svg>
           <span className={styles.title}>1 пересадка</span>
@@ -125,7 +125,7 @@ const Filter = () => {
                   fill="#2196F3"
                   d="M8.28571 14L4 10.1612L5.20857 9.0787L8.28571 11.8273L14.7914 6L16 7.09021L8.28571 14Z"
                 />
-              ) : null}
+              ) : !stateFilter.two}
             </g>
           </svg>
           <span className={styles.title}>2 пересадки</span>
@@ -154,7 +154,7 @@ const Filter = () => {
                   fill="#2196F3"
                   d="M8.28571 14L4 10.1612L5.20857 9.0787L8.28571 11.8273L14.7914 6L16 7.09021L8.28571 14Z"
                 />
-              ) : null}
+              ) : !stateFilter.three}
             </g>
           </svg>
           <span className={styles.title}>3 пересадки</span>
