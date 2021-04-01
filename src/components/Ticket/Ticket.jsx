@@ -5,7 +5,7 @@ import { splitNumber } from "../../utils";
 import styles from "./Ticket.module.scss";
 import defaultImage from "./resources/defaultImage.png";
 
-const Ticket = React.memo(({ ticket }) => {
+const Ticket = ({ ticket }) => {
   const { price, carrier, segments } = ticket;
   return (
     <div className={styles.root}>
@@ -28,7 +28,7 @@ const Ticket = React.memo(({ ticket }) => {
       </div>
     </div>
   );
-});
+};
 
 Ticket.propTypes = {
   ticket: PropTypes.shape({

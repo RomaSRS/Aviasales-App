@@ -4,11 +4,11 @@ import image from './resources/preloader.svg';
 import styles from './Loading.module.scss';
 import classNames from 'classnames';
 
-const Loading = React.memo(({ isLoading }) => (
+const Loading = ({ isLoading }) => (
   <div className={classNames(styles.root, {[styles.visible] : isLoading, [styles.hidden]: !isLoading})}>
     <img src={image} alt="" />
   </div>
-));
+);
 
 Loading.propTypes = ({
   isLoading: PropTypes.bool,
