@@ -27,7 +27,7 @@ const SortingTabs = () => {
       <button
         type="button"
         className="tabs__btn tabs__btn--active"
-        id="cheaply"
+        id={cheaply.cheaply}
         ref={cheaply}
         onClick={() => {
           dispatch(getCheaplyTickets());
@@ -39,7 +39,7 @@ const SortingTabs = () => {
       <button
         type="button"
         className="tabs__btn"
-        id="faster"
+        id={faster.faster}
         ref={faster}
         onClick={() => {
           dispatch(getFastestTickets());
