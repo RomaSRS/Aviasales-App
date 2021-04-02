@@ -14,6 +14,7 @@ import SortingTabs from "../SortingTabs/SortingTabs";
 import CheckboxFilter from "../CheckboxFilter/CheckboxFilter";
 import Ticket from "../Ticket/Ticket";
 import { isLoadingValue } from "../../constants";
+import uuid from 'uuid/v4';
 import styles from "./App.module.scss";
 
 const App = () => {
@@ -48,7 +49,7 @@ const App = () => {
   }
 
   const arr = checkFilter(without, one, two, three, tickets);
-  let key = 1;
+  let key = uuid();
 
     // eslint-disable-next-line
     const ticketList =
