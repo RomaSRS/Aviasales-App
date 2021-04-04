@@ -32,16 +32,13 @@ const App = () => {
     dispatch(getTickets());
   }, []);
 
-  // eslint-disable-next-line
   if (cheaply) {
-    // eslint-disable-next-line
     tickets.sort((prev, next) => {
       if (prev.price < next.price) return -1;
       if (prev.price < next.price) return 1;
     });
   }
   if (faster) {
-    // eslint-disable-next-line
     tickets.sort((prev, next) => {
       if (prev.segments[0].duration < next.segments[0].duration) return -1;
       if (prev.segments[0].duration < next.segments[0].duration) return 1;
@@ -51,10 +48,8 @@ const App = () => {
   const arr = checkFilter(without, one, two, three, tickets);
   let key = uuid();
 
-    // eslint-disable-next-line
     const ticketList =
     arr.length ?
-    // eslint-disable-next-line
     arr.map((ticket, i) => {
       key += 1;
       if (i < ticketsForView) {
