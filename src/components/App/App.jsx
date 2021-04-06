@@ -1,4 +1,3 @@
-/* eslint-disable spaced-comment */
 /* eslint-disable react-hooks/exhaustive-deps */
 
 import React, { useEffect, useMemo } from "react";
