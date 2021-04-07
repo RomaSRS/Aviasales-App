@@ -1,15 +1,14 @@
-const SEARCH_URL = 'https://front-test.beta.aviasales.ru/search';
-const TICKET_URL = 'https://front-test.beta.aviasales.ru/tickets';
+const BASE_URL = 'https://front-test.beta.aviasales.ru/';
 const numberOfRetries = 10;
 
 const getSearchId = async () => {
-  const res = await fetchRetry(SEARCH_URL);
+  const res = await fetchRetry(`${BASE_URL}search`);
   const searchId = await res.json();
   return searchId;
 };
 
 const getTicketBatchRes = async (params) => {
-  const url = new URL(TICKET_URL);
+  const url = new URL(`${BASE_URL}tickets`);
   url.search = new URLSearchParams(params);
   const res = await fetchRetry(url, numberOfRetries);
   return res;
