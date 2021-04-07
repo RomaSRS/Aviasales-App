@@ -1,6 +1,6 @@
-import { combineReducers } from "redux";
-import * as types from "./types";
-import filter from "./filter";
+import { combineReducers } from 'redux';
+import * as types from './types';
+import filter from './filter';
 
 const initialState = {
   cheaply: true,
@@ -22,11 +22,11 @@ const tickets = (state = initialState, { type, payload: ticketBatch }) => {
 const fetchingState = (state = initialState, { type }) => {
   switch (type) {
     case types.TICKETS_GET_REQUEST:
-      return "fetching";
+      return 'fetching';
     case types.TICKETS_GET_FAILURE:
-      return "failure";
+      return 'failure';
     case types.FETCHING_DONE:
-      return "done";
+      return 'done';
     default:
       return state;
   }
@@ -34,14 +34,14 @@ const fetchingState = (state = initialState, { type }) => {
 
 const tabTickets = (state = initialState, action) => {
   switch (action.type) {
-    case "GET_CHEAPLY_TICKETS":
+    case 'GET_CHEAPLY_TICKETS':
       return { ...state, cheaply: true, faster: false };
-    case "HANDLE_SHOW_MORE":
+    case 'HANDLE_SHOW_MORE':
       return {
         ...state,
         ticketsForView: state.ticketsForView + 5,
       };
-    case "GET_FASTEST_TICKETS":
+    case 'GET_FASTEST_TICKETS':
       return { ...state, faster: true, cheaply: false };
 
     default:

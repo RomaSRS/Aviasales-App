@@ -6,7 +6,7 @@ import logo from './resources/logo.svg';
 const Header = () => (
   <header className={styles.root}>
     <Pulse>
-      <img src={logo} className={styles.logo} alt="" />
+      <img src={logo} className={styles.logo} alt='' />
     </Pulse>
   </header>
 );

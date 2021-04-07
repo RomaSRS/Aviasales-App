@@ -1,8 +1,8 @@
 /* eslint-disable no-await-in-loop */
 
-import { addIdsMaxStopsAndTotalDuration } from "../utils";
-import { getTicketBatchRes, getSearchId } from "../fetch";
-import * as types from "./types";
+import { addIdsMaxStopsAndTotalDuration } from '../utils';
+import { getTicketBatchRes, getSearchId } from '../fetch';
+import * as types from './types';
 
 export const getTicketsRequest = () => ({ type: types.TICKETS_GET_REQUEST });
 

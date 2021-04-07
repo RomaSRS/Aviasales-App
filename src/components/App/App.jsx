@@ -1,20 +1,20 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
-import React, { useEffect, useMemo } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect, useMemo } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { getTickets } from "../../redux/actions";
-import * as actions from "../../redux/actions";
-import checkFilter from "../../utilsFilter";
-import Header from "../Header/Header";
-import Loading from "../Loading/Loading";
-import NoTickets from "../NoTickets/NoTickets";
-import SortingTabs from "../SortingTabs/SortingTabs";
-import CheckboxFilter from "../CheckboxFilter/CheckboxFilter";
-import Ticket from "../Ticket/Ticket";
-import { isLoadingValue } from "../../constants";
+import { getTickets } from '../../redux/actions';
+import * as actions from '../../redux/actions';
+import checkFilter from '../../utilsFilter';
+import Header from '../Header/Header';
+import Loading from '../Loading/Loading';
+import NoTickets from '../NoTickets/NoTickets';
+import SortingTabs from '../SortingTabs/SortingTabs';
+import CheckboxFilter from '../CheckboxFilter/CheckboxFilter';
+import Ticket from '../Ticket/Ticket';
+import { isLoadingValue } from '../../constants';
 import uuid from 'uuid/v4';
-import styles from "./App.module.scss";
+import styles from './App.module.scss';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -84,16 +84,11 @@ const App = () => {
             />
             {someValue && <NoTickets /> }
             {ticketList}
-            {/* <TicketList
-              tickets={tickets}
-              isLoading={isLoading}
-              handleShowMore={() => dispatch(actions.getTickets)}
-            /> */}
             <div className={styles.root}>
               {ticketList && (
               <button
                 className={styles.button}
-                type="button"
+                type='button'
                 onClick={(e) => dispatch(actions.handleShowMore(e))}
               >
                 ПОКАЗАТЬ ЕЩЕ

@@ -6,7 +6,7 @@ import classNames from 'classnames';
 
 const Loading = ({ isLoading }) => (
   <div className={classNames(styles.root, {[styles.visible] : isLoading, [styles.hidden]: !isLoading})}>
-    <img src={image} alt="" />
+    <img src={image} alt='' />
   </div>
 );
 

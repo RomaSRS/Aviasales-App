@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Segment from "../Segment/Segment";
-import { splitNumber } from "../../utils";
-import styles from "./Ticket.module.scss";
-import defaultImage from "./resources/defaultImage.png";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Segment from '../Segment/Segment';
+import { splitNumber } from '../../utils';
+import styles from './Ticket.module.scss';
+import defaultImage from './resources/defaultImage.png';
 
 const Ticket = ({ ticket }) => {
   const { price, carrier, segments } = ticket;
@@ -18,7 +18,7 @@ const Ticket = ({ ticket }) => {
                 ? `https://pics.avs.io/99/36/${carrier}.png`
                 : defaultImage
             }
-            alt="brandAirline"
+            alt='brandAirline'
           />
         </div>
       </div>
